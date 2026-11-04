@@ -102,6 +102,6 @@ The `Dockerfile` (nginx) is still available for hosting at the domain root, wher
 ## 🙏 Credits & License
 
 -   Based on [**PortfolioWebXP**](https://github.com/mewmewdevart/DevCommunityPortfolioChallenge2026) by Larissa Cristina ([mewmewdevart](https://github.com/mewmewdevart)), originally built for the DEV "New Year, New You" Portfolio Challenge. The OS, game engine and most of the pixel art are her work.
--   Background music: ["Chill (Loopable)"](https://opengameart.org/content/chill-loopable) by Alex McCulloch (Pro Sensory), CC0.
+-   Background music: ["Tokyo Lofi"](https://pixabay.com/music/lofi-tokyo-lofi-604786/) by ZephiraMusic, via Pixabay ([Pixabay Content License](https://pixabay.com/service/license-summary/)).
 
 Distributed under the **MIT License**. See [`LICENSE`](./LICENSE).

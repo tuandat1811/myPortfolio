@@ -8,7 +8,7 @@ import soundTada from '@/assets/sounds/desktop/TADA.WAV';
 import soundChimes from '@/assets/sounds/desktop/CHIMES.WAV';
 
 
-import gameBgmCozy from '@/assets/sounds/game/lofi-chill-loop.mp3'; // "Chill (Loopable)" by Alex McCulloch, CC0 - opengameart.org/content/chill-loopable
+import gameBgmCozy from '@/assets/sounds/game/tokyo-lofi.mp3'; // "Tokyo Lofi" by ZephiraMusic, Pixabay Content License - pixabay.com/music/lofi-tokyo-lofi-604786/
 import gameSfxCancel from '@/assets/sounds/game/Cancel.wav';
 import gameSfxClick from '@/assets/sounds/game/Click.wav';
 import gameSfxConfirm from '@/assets/sounds/game/Confirm.wav';
