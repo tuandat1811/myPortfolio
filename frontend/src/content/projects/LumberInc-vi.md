@@ -3,7 +3,7 @@ title: Lumber Inc
 subtitle: Game mobile Idle Tycoon · 70M+ lượt tải · NoPowerUp Studio
 skills: ["Game Production", "Agile / Scrum", "Jira", "Confluence", "A/B Testing", "Live Ops", "Stakeholder Management"]
 banner: ""
-link: https://play.google.com/store/search?q=Lumber%20Inc&c=apps
+link: https://apps.apple.com/us/app/idle-lumber-empire-wood-game/id1552153525
 ---
 
 Tôi là **Associate Game Producer** của **Lumber Inc**, game mobile thể loại idle tycoon với **hơn 70 triệu lượt tải**, tại **NoPowerUp Studio** (**2023 – Hiện tại**).

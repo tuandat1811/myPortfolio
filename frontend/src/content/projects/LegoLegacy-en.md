@@ -3,7 +3,7 @@ title: "LEGO® Legacy: Heroes Unboxed"
 subtitle: Netflix Games release · 50M+ downloads · Gameloft Hanoi Studio
 skills: ["Game Production", "Jira", "Confluence", "Localization", "Live Events", "Team Support"]
 banner: ""
-link: https://www.netflix.com/search?q=LEGO%20Legacy
+link: https://www.facebook.com/gameloft/videos/lego-legacy-heroes-unboxed-on-netflix/309300261556076/
 ---
 
 I worked as **Intern Game Producer** at **Gameloft Hanoi Studio** (**2022 – 2023**), working with **Netflix** and **LEGO** to release **LEGO® Legacy: Heroes Unboxed**, a game with **50M+ downloads**, on **Netflix Games**.

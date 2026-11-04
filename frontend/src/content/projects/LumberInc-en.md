@@ -3,7 +3,7 @@ title: Lumber Inc
 subtitle: Idle Tycoon Mobile Game · 70M+ downloads · NoPowerUp Studio
 skills: ["Game Production", "Agile / Scrum", "Jira", "Confluence", "A/B Testing", "Live Ops", "Stakeholder Management"]
 banner: ""
-link: https://play.google.com/store/search?q=Lumber%20Inc&c=apps
+link: https://apps.apple.com/us/app/idle-lumber-empire-wood-game/id1552153525
 ---
 
 I work as **Associate Game Producer** on **Lumber Inc**, an idle tycoon mobile game with **70M+ downloads**, at **NoPowerUp Studio** (**2023 – Present**).
