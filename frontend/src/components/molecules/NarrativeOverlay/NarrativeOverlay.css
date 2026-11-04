@@ -24,7 +24,7 @@
 
 
 .narrative-overlay__dialogue-box {
-    @apply relative bg-(--dark-800) w-full lg:max-w-[600px] h-[11rem] pointer-events-auto;
+    @apply relative bg-(--dark-800) w-full lg:max-w-[600px] h-[15rem] lg:h-[13rem] pointer-events-auto;
 }
 
 
@@ -35,7 +35,7 @@
 
 .narrative-overlay__name {
 
-    @apply bg-(--blue-500) absolute text-lg w-40 -left-10 pl-14 bottom-44 -z-1;
+    @apply bg-(--blue-500) absolute text-lg w-40 -left-10 pl-14 bottom-60 lg:bottom-52 -z-1;
 
 }
 
