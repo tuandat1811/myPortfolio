@@ -18,7 +18,7 @@ This document consolidates all technical, architectural, design, and accessibili
 **Key Technical Achievements:**
 *   **Custom Window System**: Built from scratch handling drag, resize, z-index, and focus without third-party UI libraries.
 *   **Visual Novel Engine**: A dedicated narrative layer for storytelling.
-*   **Internationalization**: Full English and Portuguese (pt-BR) support.
+*   **Internationalization**: Full English and Vietnamese (vi) support.
 
 ---
 
@@ -94,6 +94,7 @@ Accessibility is not an afterthought; it is a core architectural pillar. We targ
 ## 5. Internationalization & Localization
 
 *   **Technology**: `react-i18next`.
+*   **Languages**: English (`en`, default) and Vietnamese (`vi`).
 *   **Strategy**: Translations are stored in `public/locales/{lang}.json` and lazy-loaded.
 *   **Accessibility**: All accessibility strings (aria-labels, hidden hints) are localized.
 *   **Keys**: Managed via `translationsKeys.ts` for type safety.
