@@ -132,6 +132,10 @@ This project is open-source and built for the community.
 
 Distributed under the **MIT License**.
 
+### Music Credits
+
+-   Background music: ["Chill (Loopable)"](https://opengameart.org/content/chill-loopable) by Alex McCulloch (Pro Sensory), CC0.
+
 
 <div align="center">
   <sub>Built with 💜 and pixel precision by <strong>mewmewdevart</strong>.</sub>

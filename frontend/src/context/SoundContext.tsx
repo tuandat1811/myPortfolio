@@ -8,7 +8,7 @@ import soundTada from '@/assets/sounds/desktop/TADA.WAV';
 import soundChimes from '@/assets/sounds/desktop/CHIMES.WAV';
 
 
-import gameBgmCozy from '@/assets/sounds/game/bs-cozy-welcome-menu.mp3';
+import gameBgmCozy from '@/assets/sounds/game/lofi-chill-loop.mp3'; // "Chill (Loopable)" by Alex McCulloch, CC0 - opengameart.org/content/chill-loopable
 import gameSfxCancel from '@/assets/sounds/game/Cancel.wav';
 import gameSfxClick from '@/assets/sounds/game/Click.wav';
 import gameSfxConfirm from '@/assets/sounds/game/Confirm.wav';
