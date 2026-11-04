@@ -15,7 +15,9 @@ export default defineConfig({
     react(),
     tailwindcss(),
     VitePWA({
-      registerType: 'prompt',
+      // New deploys activate immediately so visitors never run a stale build
+      // that points at deleted (hashed) assets.
+      registerType: 'autoUpdate',
       includeAssets: ['favicon_io/favicon.ico', 'favicon_io/favicon-16x16.png', 'favicon_io/favicon-32x32.png', 'favicon_io/android-chrome-192x192.png', 'favicon_io/android-chrome-512x512.png'],
       manifest: {
         name: 'Hoang Dang Tuan Dat | Portfolio',
