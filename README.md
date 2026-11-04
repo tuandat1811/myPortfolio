@@ -1,142 +1,107 @@
-<p align="right">
-  <a href="./README.pt-br.md">🇧🇷 Leia em Português</a>
-</p>
-
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/cd12393e-a49c-486d-bdc8-ee1407dcf371" width="120" height="120" alt="PortfolioWeb XP Logo" />
-  <h1>PortfolioWebXP / DevCommunityPortfolioChallenge2026</h1>
-  <p><strong>Interactive. Nostalgic. Accessible.</strong></p>
-  <p>A gamified portfolio experience built for the Google AI "New Year, New You" Challenge.</p>
-  
-<p align="center">
-<a href="https://devcommunityportfoliochallenge2026-574008284484.us-central1.run.app/">Play the Project</a>
-</p>
+  <img src="./frontend/public/banner.png" width="720" alt="Pixel-art room with Dat Hoang's character and a welcome dialogue" />
+  <h1>Hoang Dang Tuan Dat — Game Producer Portfolio</h1>
+  <p><strong>A playable portfolio: walk around a pixel-art room, boot a retro OS, or browse my games on a console.</strong></p>
 
   <p>
-    <img src="https://img.shields.io/badge/Status-In_Progress-6b9acf?style=for-the-badge&logo=headspace&logoColor=white" alt="Status" />
-    <img src="https://img.shields.io/badge/Tech-React_19-blue?style=for-the-badge&logo=react&logoColor=white" alt="React" />
-    <img src="https://img.shields.io/badge/Style-Tailwind_v4-38bdf8?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind" />
+    <a href="https://tuandat1811.github.io/myPortfolio/"><strong>▶ Play the portfolio</strong></a>
+    &nbsp;·&nbsp;
+    <a href="https://www.linkedin.com/in/tuandat0328/">LinkedIn</a>
+    &nbsp;·&nbsp;
+    <a href="mailto:dat.hdt181100@gmail.com">Email</a>
+  </p>
+
+  <p>
+    <img src="https://img.shields.io/badge/React-19-61dafb?style=for-the-badge&logo=react&logoColor=white" alt="React 19" />
+    <img src="https://img.shields.io/badge/Tailwind-v4-38bdf8?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind v4" />
+    <img src="https://img.shields.io/badge/Languages-EN%20%7C%20VI-6b9acf?style=for-the-badge" alt="English and Vietnamese" />
   </p>
 </div>
 
+## 👋 About Me
 
-## 👋 Introduction
+I'm **Hoang Dang Tuan Dat**, a Game Producer based in Hanoi, Vietnam (PMP certified).
 
-> *"Where did the fun go?"*
-
-We build software for humans, yet most portfolios are static lists of links. This project reimagines the portfolio as an **immersive experience**. By blending the nostalgia of **Windows 95** with the interactivity of a **2D RPG**, we invite users to *explore* a developer's world rather than just read about it.
-
-It serves two purposes:
-1.  **For Recruiters & Visitors**: A memorable, engaging way to discover my skills and projects.
-2.  **For Developers**: A showcase of complex frontend architecture, custom system design, and strict accessibility standards.
-
-## ✨ Key Features
-
-### 🖥️ Simulated Operating System
-A fully functional desktop environment built from scratch:
--   **Window Manager**: Custom logic for drag-and-drop, resizing, minimizing, z-index stacking, and changing focus.
--   **Multitasking**: Open multiple apps (Notepad, Paint, Calculator) simultaneously.
--   **Taskbar**: Real-time state management of open applications and system tray utilities.
-
-### 🎮 Gamified Navigation
--   **2D Room**: A pixel-art environment where you control a character to walk around and interact with objects.
--   **Memory Card Screen**: A PlayStation 2-inspired interface to browse project case studies.
--   **Sound Design**: Context-sensitive sound effects and background music (with user controls) to enhance immersion.
-
-### ♿ Accessibility-First
-"Interactive" doesn't mean "inaccessible".
--   **WCAG 2.1 Compliance**: High-contrast modes, focus management, and screen reader support.
--   **Keyboard Navigation**: Full support for navigating the desktop grid, menus, and games without a mouse.
--   **Reduced Motion**: Respects user system preferences.
-
-## 🏗️ Technical Architecture
-
-This project is not just a UI shell; it's a robust application built with modern engineering practices.
-
-### Tech Stack
-| Category | Technology | Reasoning |
+| Project | Role | Highlights |
 | :--- | :--- | :--- |
-| **Framework** | **React 19 + Vite** | High performance, latest hooks, and fast HMR. |
-| **Language** | **TypeScript** | Strict type safety for complex window/system state. |
-| **State** | **XState + Context** | State machines handle the complex logic of the OS (boot sequence, window states). |
-| **Styling** | **Tailwind CSS v4** | Utility-first for rapid UI dev, configured with BEM naming for structure. |
-| **Tests** | **Vitest** | Fast unit and component testing. |
-| **I18n** | **i18next** | Full internationalization support (EN/PT-BR/ES). |
+| **Lumber Inc** | Associate Game Producer @ NoPowerUp Studio | Idle tycoon, 70M+ downloads |
+| **Milk Farm Tycoon** | Associate Game Producer @ NoPowerUp Studio | 500K+ downloads |
+| **LEGO® Legacy: Heroes Unboxed** | Intern Game Producer @ Gameloft Hanoi | 50M+ downloads, released on Netflix Games |
 
-### Performance & SEO
--   **PWA Support**: The app is fully installable (Progressive Web App) with offline capabilities, ensuring it feels like a native OS.
--   **Bundle Optimization**: We use code-splitting and dynamic imports (`React.lazy`) for all major applications (Calculator, Game, Paint). This ensures the initial load is blazing fast (under 200kb gzipped) despite the heavy assets.
--   **SEO**: While being an SPA, we utilize `react-helmet-async` and structured JSON-LD data to ensure the portfolio is indexable and provides rich social sharing previews.
+Instead of a static CV, this site lets you *play* through my experience.
 
-### Project Structure
-We follow a hybrid **Feature-Based** architecture to keep concerns separated. This ensures that deleting a feature (like the Calculator) removes all its associated logic, assets, and styles instantly.
+## 🗺️ Choose Your Journey
 
-```bash
-src/
-├── features/           # Domain logic (e.g., Messenger, FileExplorer, Paint)
-│   ├── Calculator/     # Self-contained feature with its own assets/types/logic
-│   └── WindowManager/  # Core system logic
-├── components/         # Reusable Atomic UI (Buttons, Inputs, Modals)
-├── context/            # Global providers (OSContext, SoundContext)
-├── hooks/              # Custom hooks (useDraggable, useWindow)
-└── content/            # Data layer (projects markdown, registry)
-```
+The start screen offers four ways to explore:
 
-## 🚀 How It Works
+1.  **Full Experience** — Walk my pixel-art character around a room. Interact with the computer, the console and the desk to open each part of the portfolio, guided by visual-novel style dialogue.
+2.  **Resume** — A paper-style resume page for a quick read.
+3.  **Operating System** — A Windows 95-style desktop with draggable windows, a taskbar, and apps (Internet Explorer resume, PDF case studies, Notepad, Paint, Calculator, Messenger…).
+4.  **Video Game** — A PlayStation 2-inspired memory card screen listing the games I've worked on, with links to play or watch them.
 
-1.  **Boot Sequence**: The app initializes `OSContext`, loads user preferences, and simulates a BIOS boot screen.
-2.  **System Registry**: `AppRegistry.tsx` acts as the kernel, defining all available apps, their icons, default sizes, and capabilities.
-3.  **Window Factory**: When an app opens, the `WindowManager` creates an instance wrapped in a `WindowFrame`, injecting the specific feature component while handling global OS events.
+The whole site is available in **English** and **Tiếng Việt**, works offline as an installable PWA, and supports keyboard navigation and reduced motion.
 
-## 🛠️ Developer Experience
+## 🛠️ Tech Stack
 
-### Adding Content (Extensibility)
-The project is **driven by data**. You don't need to edit React code to add a new project to the portfolio.
-1.  Go to `src/content/projects/`.
-2.  Create a Markdown file (e.g., `MyProject-en.md`).
-3.  Add frontmatter (Title, Tech Stack, Images).
-4.  The system automatically parses and renders it in the Game Console interface.
+| Category | Technology |
+| :--- | :--- |
+| Framework | React 19 + Vite |
+| Language | TypeScript |
+| State | XState + React Context |
+| Styling | Tailwind CSS v4 (BEM-style class names) |
+| i18n | i18next (`en`, `vi`) |
+| Tests | Vitest + Testing Library |
+| PWA / SEO | vite-plugin-pwa, react-helmet-async, JSON-LD |
+| Hosting | GitHub Pages (GitHub Actions) |
 
-### Theming & Styling
-We use **Tailwind v4** with a custom configuration. We combine it with **BEM** methodology in our CSS modules to ensure classes are readable and components are isolated.
--   **Global Variables**: All colors and spacing use CSS variables for easy theming (e.g., `--win-gray`, `--win-blue`).
+## ✏️ Editing the Content
 
-## 🏁 Getting Started
+Most content is data-driven, so no React changes are needed:
 
-### Prerequisites
--   Node.js 18+
--   npm
+| What | Where |
+| :--- | :--- |
+| Name, job title, email, LinkedIn, site URL | `frontend/src/data/profile.ts` |
+| All UI text, bio, experience, education | `frontend/public/locales/en.json`, `vi.json` |
+| Case studies (PDF viewer in the OS) | `frontend/src/content/projects/*-{en,vi}.md` |
+| Game cards (Video Game journey) | `frontend/src/content/games/*-{en,vi}.md` |
+| Player sprites, portrait, avatar | `frontend/src/assets/images/game/`, `frontend/src/assets/icons/` |
+| Favicons and share image | `frontend/public/favicon_io/`, `frontend/public/banner.png` |
 
-### Installation
+After editing translations, run `npm run i18n:validate` to check that both languages have the same keys.
+
+**Pixel art guidelines:** draw at native resolution and export at **×5** with nearest-neighbour scaling (no smoothing), on a transparent background, as PNG plus WebP. The player sheets are 4 frames of 105×115 px (420×115 per sheet).
+
+## 🚀 Getting Started
+
+**Prerequisites:** Node.js 18+ and npm.
 
 ```bash
-# 1. Clone the repository
-git clone https://github.com/mewmewdevart/DevCommunityPortfolioChallenge2026.git
-
-# 2. Go to the frontend directory
-cd DevCommunityPortfolioChallenge2026/frontend
-
-# 3. Install dependencies
+git clone https://github.com/tuandat1811/myPortfolio.git
+cd myPortfolio/frontend
 npm install
-
-# 4. Run the development server
 npm run dev
 ```
-Open `http://localhost:5173` to start the experience.
 
-## 🤝 Contributing & License
+Open `http://localhost:5173`.
 
-This project is open-source and built for the community.
--   Found a bug? Open an issue.
--   Want to add a "Doom" clone? Submit a PR!
+Other useful scripts (run inside `frontend/`):
 
-Distributed under the **MIT License**.
+| Command | Description |
+| :--- | :--- |
+| `npm run build` | Type-check and build to `dist/` |
+| `npm run preview` | Serve the production build locally |
+| `npm test` | Run the test suite |
+| `npm run lint` | Lint the code |
 
-### Music Credits
+## 🌐 Deployment
 
+Every push to `main` triggers `.github/workflows/deploy-pages.yml`, which builds the site with `VITE_BASE=/<repo-name>/` and publishes it to GitHub Pages. The repository's **Settings → Pages → Source** must be set to **GitHub Actions**.
+
+The `Dockerfile` (nginx) is still available for hosting at the domain root, where the base path defaults to `/`.
+
+## 🙏 Credits & License
+
+-   Based on [**PortfolioWebXP**](https://github.com/mewmewdevart/DevCommunityPortfolioChallenge2026) by Larissa Cristina ([mewmewdevart](https://github.com/mewmewdevart)), originally built for the DEV "New Year, New You" Portfolio Challenge. The OS, game engine and most of the pixel art are her work.
 -   Background music: ["Chill (Loopable)"](https://opengameart.org/content/chill-loopable) by Alex McCulloch (Pro Sensory), CC0.
 
-
-<div align="center">
-  <sub>Built with 💜 and pixel precision by <strong>mewmewdevart</strong>.</sub>
-</div>
+Distributed under the **MIT License**. See [`LICENSE`](./LICENSE).
