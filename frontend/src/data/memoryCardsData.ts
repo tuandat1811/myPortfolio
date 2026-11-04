@@ -2,12 +2,6 @@
 import matter from 'gray-matter';
 import memoryCardCleanImage from '@/assets/images/game/memory-card_clean.png';
 import memoryCardCleanImageWebP from '@/assets/images/game/memory-card_clean.webp';
-import memoryCardKirbyImage from '@/assets/images/game/memory-card_kirby.png';
-import memoryCardKirbyImageWebP from '@/assets/images/game/memory-card_kirby.webp';
-import memoryCardDoubleVisionImage from '@/assets/images/game/memory-card_doubleVision.png';
-import memoryCardDoubleVisionImageWebP from '@/assets/images/game/memory-card_doubleVision.webp';
-import memoryCardSnake from '@/assets/images/game/memory-card_snake.png';
-import memoryCardSnakeWebP from '@/assets/images/game/memory-card_snake.webp';
 
 export interface MemoryCardData {
     id: string;
@@ -28,9 +22,6 @@ export interface MemoryCardData {
 
 const IMAGE_MAP: Record<string, { src: string; srcWebP: string }> = {
     'memory-card_clean.png': { src: memoryCardCleanImage, srcWebP: memoryCardCleanImageWebP },
-    'memory-card_kirby.png': { src: memoryCardKirbyImage, srcWebP: memoryCardKirbyImageWebP },
-    'memory-card_doubleVision.png': { src: memoryCardDoubleVisionImage, srcWebP: memoryCardDoubleVisionImageWebP },
-    'memory-card_snake.png': { src: memoryCardSnake, srcWebP: memoryCardSnakeWebP },
 };
 
 const markdownFiles = import.meta.glob('../content/games/*.md', {
