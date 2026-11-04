@@ -27,7 +27,7 @@ export const PROFILE: Profile = {
   /** Leave empty to hide the GitHub link everywhere. */
   github: '',
   /** Public URL of the deployed site (used for SEO / fake browser address bar). */
-  siteUrl: 'https://dathoang.dev',
+  siteUrl: 'https://tuandat1811.github.io/myPortfolio',
   knowsAbout: [
     'Game Production',
     'Mobile Games',

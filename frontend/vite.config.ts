@@ -6,7 +6,11 @@ import { VitePWA } from 'vite-plugin-pwa'
 import { visualizer } from 'rollup-plugin-visualizer'
 import path from 'path'
 
+// Public base path: '/' for Docker / Cloud Run, set VITE_BASE=/myPortfolio/ for GitHub Pages
+const base = process.env.VITE_BASE || '/'
+
 export default defineConfig({
+  base,
   plugins: [
     react(),
     tailwindcss(),
@@ -14,26 +18,27 @@ export default defineConfig({
       registerType: 'prompt',
       includeAssets: ['favicon_io/favicon.ico', 'favicon_io/favicon-16x16.png', 'favicon_io/favicon-32x32.png', 'favicon_io/android-chrome-192x192.png', 'favicon_io/android-chrome-512x512.png'],
       manifest: {
-        name: 'Larissa Cristina Benedito | Portfolio',
-        short_name: 'MewPortfolio',
-        description: 'Front-End Software Engineer Portfolio showcasing accessibility, performance, and pixel-perfect interfaces in a Windows 95-style experience.',
+        name: 'Hoang Dang Tuan Dat | Portfolio',
+        short_name: 'DatPortfolio',
+        description: 'Game Producer portfolio of Hoang Dang Tuan Dat in a retro Windows 95-style experience.',
         theme_color: '#6b9acf',
         background_color: '#4e3161',
         display: 'standalone',
-        start_url: '/',
+        start_url: base,
+        scope: base,
         icons: [
           {
-            src: '/favicon_io/android-chrome-192x192.png',
+            src: 'favicon_io/android-chrome-192x192.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: '/favicon_io/android-chrome-512x512.png',
+            src: 'favicon_io/android-chrome-512x512.png',
             sizes: '512x512',
             type: 'image/png'
           },
           {
-            src: '/favicon_io/android-chrome-512x512.png',
+            src: 'favicon_io/android-chrome-512x512.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'maskable'
