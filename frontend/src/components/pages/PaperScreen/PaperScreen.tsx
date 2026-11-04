@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import './PaperScreen.css';
 import { useTranslation } from '@/context/LanguageContext';
+import { PROFILE, prettyUrl } from '@/data/profile';
 
 export function PaperFold() {
     const { t } = useTranslation();
@@ -26,7 +27,7 @@ export function PaperFold() {
                         spellCheck={false}
                     >
                         <h1 className="paper-title">
-                            Larissa Cristina Benedito
+                            {PROFILE.fullName}
                         </h1>
                         <p className="paper-intro">
                             {t('paper_text_intro')}
@@ -59,23 +60,29 @@ export function PaperFold() {
                                 <h3 className="paper-role">{t('resume_edu_college1_course')}</h3>
                                 <p className="paper-company">{t('resume_edu_college1_name')} | {t('resume_edu_college1_date')}</p>
                             </div>
+                        </div>
+
+                        <div className="paper-section">
+                            <h2 className="paper-section-title">{t('resume_cert_title')}</h2>
                             <div className="paper-education-item">
-                                <h3 className="paper-role">{t('resume_edu_college2_course')}</h3>
-                                <p className="paper-company">{t('resume_edu_college2_name')} | {t('resume_edu_college2_date')}</p>
+                                <h3 className="paper-role">{t('resume_cert_name')}</h3>
+                                <p className="paper-company">{t('resume_cert_org')}</p>
                             </div>
                         </div>
 
                         <div className="paper-section">
                             <h2 className="paper-section-title">{t('contact')}</h2>
                             <p className="paper-contact-text">
-                                Email: <a href="mailto:mewmewdevart@gmail.com" className="paper-link" target="_blank" rel="noopener noreferrer">mewmewdevart@gmail.com</a>
+                                Email: <a href={`mailto:${PROFILE.email}`} className="paper-link" target="_blank" rel="noopener noreferrer">{PROFILE.email}</a>
                             </p>
                             <p className="paper-contact-text">
-                                LinkedIn: <a href="https://linkedin.com/in/mewmewdevart" className="paper-link" target="_blank" rel="noopener noreferrer">linkedin.com/in/mewmewdevart</a>
+                                LinkedIn: <a href={PROFILE.linkedin} className="paper-link" target="_blank" rel="noopener noreferrer">{prettyUrl(PROFILE.linkedin)}</a>
                             </p>
-                            <p className="paper-contact-text">
-                                Github: <a href="https://github.com/mewmewdevart" className="paper-link" target="_blank" rel="noopener noreferrer">github.com/mewmewdevart</a>
-                            </p>
+                            {PROFILE.github && (
+                                <p className="paper-contact-text">
+                                    Github: <a href={PROFILE.github} className="paper-link" target="_blank" rel="noopener noreferrer">{prettyUrl(PROFILE.github)}</a>
+                                </p>
+                            )}
                         </div>
 
                     </section>

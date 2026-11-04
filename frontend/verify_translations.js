@@ -4,7 +4,7 @@ const path = require('path');
 
 const projectRoot = '/home/mew/Desktop/DevPortfolioChallenge2026/client';
 const enPath = path.join(projectRoot, 'public/locales/en.json');
-const ptPath = path.join(projectRoot, 'public/locales/pt-BR.json');
+const ptPath = path.join(projectRoot, 'public/locales/vi.json');
 const srcPath = path.join(projectRoot, 'src');
 
 // Read JSONs
@@ -16,7 +16,7 @@ const missingInPt = enKeys.filter(k => !ptKeys.includes(k));
 const missingInEn = ptKeys.filter(k => !enKeys.includes(k));
 
 console.log('--- Key Discrepancies ---');
-if (missingInPt.length) console.log('Missing in pt-BR:', missingInPt);
+if (missingInPt.length) console.log('Missing in vi:', missingInPt);
 if (missingInEn.length) console.log('Missing in en:', missingInEn);
 if (!missingInPt.length && !missingInEn.length) console.log('Keys match perfectly.');
 

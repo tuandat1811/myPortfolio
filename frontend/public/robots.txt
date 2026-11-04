@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://mewmewdevart.com/sitemap.xml
+Sitemap: https://dathoang.dev/sitemap.xml

@@ -5,14 +5,12 @@ import logoGame from '@assets/images/game/PortfolioWebXP.png';
 import logoGameWebP from '@assets/images/game/PortfolioWebXP.webp';
 import USAIcon from '@assets/images/game/flags_USA.png';
 import USAIconWebP from '@assets/images/game/flags_USA.webp';
-import BRIcon from '@assets/images/game/flags_BR.png';
-import BRIconWebP from '@assets/images/game/flags_BR.webp';
-import ESPIcon from '@assets/images/game/flags_ESP.png';
-import ESPIconWebP from '@assets/images/game/flags_ESP.webp';
+import VNIcon from '@assets/images/game/flags_VN.png';
 import iconSwitch from 'pixelarticons/svg/switch.svg';
 import iconEmail from '@assets/icons/socials_email-Sheet.png';
 import iconGithub from '@assets/icons/socials_github-Sheet.png';
 import iconLinkedin from '@assets/icons/socials_linkedin-Sheet.png';
+import { PROFILE } from '@/data/profile';
 import './GameMenus.css';
 import { IconRenderer } from '@/components/atoms/IconRenderer/IconRenderer';
 
@@ -39,29 +37,15 @@ export const StartMenu: React.FC<MenuProps> = ({
 
   const toggleLanguage = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (language === 'en') {
-      setLanguage('pt-BR');
-    } else if (language === 'pt-BR') {
-      setLanguage('es');
-    } else {
-      setLanguage('en');
-    }
+    setLanguage(language === 'en' ? 'vi' : 'en');
     playSfx('game_click');
   };
 
   const currentLanguageLabel =
-    language === 'en'
-      ? t('language_english')
-      : language === 'pt-BR'
-        ? t('language_portuguese')
-        : t('language_spanish');
+    language === 'en' ? t('language_english') : t('language_vietnamese');
 
   const nextLangLabel =
-    language === 'en'
-      ? t('btn_to_pt')
-      : language === 'pt-BR'
-        ? t('btn_to_es')
-        : t('btn_to_en');
+    language === 'en' ? t('btn_to_vi') : t('btn_to_en');
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -134,39 +118,16 @@ export const StartMenu: React.FC<MenuProps> = ({
               /></p>
             </div>
           )}
-          {language === 'pt-BR' && (
+          {language !== 'en' && (
             <div className="game-menu__lang-option">
-              <picture>
-                <source srcSet={BRIconWebP} type="image/webp" />
-                <img
-                  src={BRIcon}
-                  alt={t('icon_brazil_alt')}
-                  width="64"
-                  height="64"
-                />
-              </picture>
+              <img
+                src={VNIcon}
+                alt={t('icon_vietnam_alt')}
+                width="64"
+                height="64"
+              />
               <p className="game-menu__lang-label game-menu__lang-label--flex">
-                Português Brasileiro{' '}
-                <IconRenderer
-                  icon={iconSwitch}
-                  className="game-menu__icon-switch"
-                />
-              </p>
-            </div>
-          )}
-          {language === 'es' && (
-            <div className="game-menu__lang-option">
-              <picture>
-                <source srcSet={ESPIconWebP} type="image/webp" />
-                <img
-                  src={ESPIcon}
-                  alt={t('icon_spain_alt')}
-                  width="64"
-                  height="64"
-                />
-              </picture>
-              <p className="game-menu__lang-label game-menu__lang-label--flex">
-                Español{' '}
+                Tiếng Việt{' '}
                 <IconRenderer
                   icon={iconSwitch}
                   className="game-menu__icon-switch"
@@ -205,7 +166,7 @@ export const StartMenu: React.FC<MenuProps> = ({
           <ul>
             <li>
               <a
-                href="mailto:mewmewdevart@gmail.com"
+                href={`mailto:${PROFILE.email}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 title={t('social_email')}
@@ -220,7 +181,7 @@ export const StartMenu: React.FC<MenuProps> = ({
             </li>
             <li>
               <a
-                href="https://www.linkedin.com/in/mewmewdevart/"
+                href={PROFILE.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 title={t('social_linkedin')}
@@ -233,21 +194,23 @@ export const StartMenu: React.FC<MenuProps> = ({
                 />
               </a>
             </li>
-            <li>
-              <a
-                href="https://github.com/mewmewdevart"
-                target="_blank"
-                rel="noopener noreferrer"
-                title={t('social_github')}
-                aria-label={t('social_github')}
-                className="game-menu__social-link"
-              >
-                <div
-                  className="game-menu__social-sprite"
-                  style={{ backgroundImage: `url(${iconGithub})` }}
-                />
-              </a>
-            </li>
+            {PROFILE.github && (
+              <li>
+                <a
+                  href={PROFILE.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={t('social_github')}
+                  aria-label={t('social_github')}
+                  className="game-menu__social-link"
+                >
+                  <div
+                    className="game-menu__social-sprite"
+                    style={{ backgroundImage: `url(${iconGithub})` }}
+                  />
+                </a>
+              </li>
+            )}
           </ul>
         </footer>
         <p className="game-menu__credits-text">{t('credits_developed_by')}</p>

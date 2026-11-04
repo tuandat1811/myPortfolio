@@ -17,7 +17,9 @@ const GREEN = '\x1b[32m';
 const RESET = '\x1b[0m';
 
 function extractKeysFromTS(filePath) {
-    const content = fs.readFileSync(filePath, 'utf-8');
+    const fullContent = fs.readFileSync(filePath, 'utf-8');
+    // Only parse the TranslationKeys union (skip the Language type above it)
+    const content = fullContent.slice(fullContent.indexOf('TranslationKeys'));
     const keys = [];
     const regex = /\|\s*'([\w_]+)'/g;
     let match;
@@ -75,7 +77,7 @@ function main() {
     const definedKeys = extractKeysFromTS(KEYS_FILE);
     console.log(`Found ${definedKeys.length} keys definition.`);
 
-    const locales = ['en', 'pt-BR'];
+    const locales = ['en', 'vi'];
     let success = true;
 
     locales.forEach(locale => {

@@ -1,7 +1,6 @@
 
 import matter from 'gray-matter';
 
-import SueTheRealBanner from '@assets/images/projects/sue-the-real.png';
 import type { FileSystemItem, ProjectData } from '@interfaces/types';
 import { APP_IDS } from './appIds';
 
@@ -54,7 +53,7 @@ Object.keys(markdownFiles).forEach((path) => {
     const id = fileName.replace('.md', '');
 
     // Parse filename for language: Name-Lang.md
-    // e.g. SueTheReal-ptBR.md -> base=SueTheReal, lang=ptBR
+    // e.g. LumberInc-vi.md -> base=LumberInc, lang=vi
     const langMatch = fileName.match(/^(.+)-([a-zA-Z]{2,5})\.md$/);
     const itemBaseId = langMatch ? langMatch[1] : id;
     const itemLanguage = langMatch ? langMatch[2] : undefined;
@@ -109,22 +108,7 @@ export const DEFAULT_FS: Record<string, FileSystemItem> = {
     appId: APP_IDS.FAKEPATH,
   },
 
-  // The user can add more projects here too :)
-  // sue_project_file: {
-  //   id: 'sue_project_file',
-  //   parentId: 'projects',
-  //   name: 'Sue_The_Real.pdf',
-  //   type: 'file',
-  //   appId: APP_IDS.PDF_VIEWER,
-  //   content: {
-  //     title: 'Sue The Real',
-  //     subtitle: 'Landing Page Web',
-  //     banner: SueTheRealBanner,
-  //     skills: ['React', 'Tailwind', 'Wordpress', 'SEO', 'Acessibilidade', 'Figma'],
-  //     description: 'Lorem ipsum dolor sit amet...',
-  //     link: 'https://suethereal.com',
-  //   } as ProjectData,
-  // },
+  // Project case studies are generated from src/content/projects/*.md
 
   ...generatedProjectFiles
 };

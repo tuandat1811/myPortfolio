@@ -52,7 +52,7 @@ export const Welcome = () => {
               <div className="welcome__hero">
                 <img
                   src={MeWithCat}
-                  alt="MewMewDev Avatar"
+                  alt="Dat Hoang Avatar"
                   className="welcome__avatar"
                 />
                 <div className="flex flex-col gap-2">

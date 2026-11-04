@@ -2,6 +2,7 @@ import React from 'react';
 import MewMewPhoto from "@assets/images/game/hud-me1.png";
 import MewMewPhotoWebP from "@assets/images/game/hud-me1.webp";
 import { useTranslation } from '@/context/LanguageContext';
+import { PROFILE } from '@/data/profile';
 import './NarrativeOverlay.css';
 
 interface NarrativeAction {
@@ -86,7 +87,7 @@ export const NarrativeOverlay: React.FC<NarrativeOverlayProps> = ({
                 </div>
 
                 <div className="narrative-overlay__dialogue-box">
-                    <h3 className='narrative-overlay__name'>Larissa </h3>
+                    <h3 className='narrative-overlay__name'>{PROFILE.shortName}</h3>
                     <div className="narrative-overlay__content">
                         <p className="narrative-overlay__text">
                             {textRef.current}

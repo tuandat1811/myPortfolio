@@ -40,9 +40,7 @@ const MemoryCardScreen: React.FC<MemoryCardScreenProps> = ({ onBack }) => {
     // Filter cards based on current language
     const filteredCards = React.useMemo(() => {
         const langMap: Record<string, string> = {
-            'pt-BR': 'ptBR',
-            'pt': 'ptBR',
-            'es': 'es',
+            'vi': 'vi',
             'en': 'en'
         };
         // Normalize current language or default to 'en'

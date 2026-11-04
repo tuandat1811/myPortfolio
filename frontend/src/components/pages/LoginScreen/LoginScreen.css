@@ -42,11 +42,11 @@
 }
 
 .login-screen__grid {
-    @apply grid grid-cols-1 sm:grid-cols-[90px_1fr] gap-2 items-center;
+    @apply grid grid-cols-1 sm:grid-cols-[max-content_1fr] gap-2 items-center;
 }
 
 .login-screen__label {
-    @apply text-lg;
+    @apply text-lg whitespace-nowrap;
 }
 
 .login-screen__input {

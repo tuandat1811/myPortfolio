@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import type { ErrorInfo, ReactNode } from 'react';
 import RefreshIcon from '@assets/icons/mini_icon_refresh.png';
 import { useTranslation } from '@/context/LanguageContext';
+import { PROFILE } from '@/data/profile';
 import type { TranslationKeys } from '@/utils/translationsKeys';
 
 import './ErrorBoundary.css';
@@ -58,7 +59,7 @@ class ErrorBoundaryInner extends Component<Props, State> {
 
                     <p className='error-boundary__contact-text'>
                         {t('errorBoundary_contact')}
-                        <a href="https://linktr.ee/mewmewdevart" target="_blank" rel="noopener noreferrer">{t('errorBoundary_contact_link')}</a>
+                        <a href={PROFILE.linkedin} target="_blank" rel="noopener noreferrer">{t('errorBoundary_contact_link')}</a>
                     </p>
                 </div>
             );
