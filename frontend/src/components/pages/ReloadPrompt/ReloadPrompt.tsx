@@ -24,10 +24,13 @@ export function ReloadPrompt() {
     }
 
     useEffect(() => {
-        if (offlineReady) {
-            console.log('App is ready to work offline')
-        }
-    }, [offlineReady])
+        if (!offlineReady) return
+        console.log('App is ready to work offline')
+        // Informational only: hide it on its own so it doesn't keep covering
+        // the language toggle in the top-right corner of the start screen.
+        const timer = setTimeout(() => setOfflineReady(false), 4000)
+        return () => clearTimeout(timer)
+    }, [offlineReady, setOfflineReady])
 
     return (
         <div className="reload-prompt">

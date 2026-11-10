@@ -126,31 +126,36 @@ export const SoundProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const pendingMusicRef = useRef<MusicType | null>(null);
 
 
+    // Always points at the latest playMusic, so the one-time unlock listener
+    // below never calls a stale closure (old mute/volume state).
+    const playMusicRef = useRef<(type: MusicType, forceUnlock?: boolean) => void>(() => { });
+
     useEffect(() => {
+        // Listen in the capture phase: buttons that call stopPropagation()
+        // (language toggle, HUD controls) must still count as the user gesture
+        // that unlocks audio.
+        const events = ['pointerdown', 'pointerup', 'click', 'keydown', 'touchend'] as const;
+        const opts: AddEventListenerOptions = { capture: true };
+
         const unlock = () => {
+            // Some events (e.g. a touch pointerdown) don't grant autoplay
+            // permission; wait for one that does instead of failing silently.
+            const activation = (navigator as Navigator & { userActivation?: { isActive: boolean } }).userActivation;
+            if (activation && !activation.isActive) return;
+
+            events.forEach(evt => window.removeEventListener(evt, unlock, opts));
             setAudioUnlocked(true);
 
             // If there's pending music and we aren't muted, play it now
             if (pendingMusicRef.current) {
                 const musicType = pendingMusicRef.current;
                 pendingMusicRef.current = null;
-                playMusic(musicType, true); // true = force/bypass lock check
+                playMusicRef.current(musicType, true); // true = force/bypass lock check
             }
-
-            window.removeEventListener('click', unlock);
-            window.removeEventListener('keydown', unlock);
-            window.removeEventListener('touchstart', unlock);
         };
 
-        window.addEventListener('click', unlock);
-        window.addEventListener('keydown', unlock);
-        window.addEventListener('touchstart', unlock);
-
-        return () => {
-            window.removeEventListener('click', unlock);
-            window.removeEventListener('keydown', unlock);
-            window.removeEventListener('touchstart', unlock);
-        };
+        events.forEach(evt => window.addEventListener(evt, unlock, opts));
+        return () => events.forEach(evt => window.removeEventListener(evt, unlock, opts));
     }, []);
 
     const setVolume = (vol: number) => {
@@ -259,6 +264,10 @@ export const SoundProvider: React.FC<{ children: React.ReactNode }> = ({ childre
             console.warn("Music error", e);
         }
     }, [isMuted, volume, musicMap, audioUnlocked]);
+
+    useEffect(() => {
+        playMusicRef.current = playMusic;
+    }, [playMusic]);
 
     const stopMusic = useCallback(() => {
         pendingMusicRef.current = null;
